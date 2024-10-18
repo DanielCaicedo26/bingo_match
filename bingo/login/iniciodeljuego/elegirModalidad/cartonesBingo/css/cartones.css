@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 36px; /* Reducido */
+    font-weight: bold;
+    margin-bottom: 15px; /* Reducido */
+    color: #f70d0d;
+}
+
+.bingo-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.bingo-card {
+    display: none; /* Oculta los cartones por defecto */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px; /* Reducido */
+    padding: 16px; /* Aumentado */
+    border-radius: 12px; /* Más pequeño */
+    border: 4px solid #00FF00; /* Reducido */
+    box-shadow: 0 0 12px #00FF00, 0 0 24px #00FF00; /* Sombra más grande */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    color: inherit; /* Asegura que el texto tome el color del contenedor */
+}
+
+.bingo-card.visible {
+    display: grid; /* Solo se muestra el cartón activo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre las tarjetas */
+}
+
+.bingo-card.dark {
+    background-color: rgba(143, 76, 109, 0.7);
+}
+
+.bingo-card.light {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+.bingo-card .header {
+    grid-column: span 5;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px; /* Ajustado */
+    font-weight: bold;
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00, 0 0 40px #00FF00;
+}
+
+.bingo-card .cell {
+    width: 35px; /* Aumentado */
+    height: 35px; /* Aumentado */
+    background-color: #00FF00;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Aumentado */
+    border-radius: 2px; /* Más pequeño */
+    box-shadow: 0 0 4px #00FF00, 0 0 8px #00FF00; /* Sombra más pequeña */
+}
+
+.cell.marked {
+    background-color: #FFD700; /* Color dorado para las celdas marcadas */
+    color: black;
+    text-decoration: line-through;
+}
+
+.arrow {
+    font-size: 36px; /* Reducido */
+    margin-top: 15px; /* Reducido */
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00, 0 0 40px #00FF00;
+    cursor: pointer; /* Cambia el cursor al pasar sobre las flechas */
+    transition: transform 0.3s; /* Transición suave */
+}
+
+.arrow:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .bingo-card .cell {
+        width: 25px; /* Más pequeño en dispositivos móviles */
+        height: 25px; /* Más pequeño en dispositivos móviles */
+        font-size: 12px; /* Ajustar tamaño de fuente */
+    }
+
+    .title {
+        font-size: 24px; /* Reducir tamaño del título en móviles */
+    }
+}

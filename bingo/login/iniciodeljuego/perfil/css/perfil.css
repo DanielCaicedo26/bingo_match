@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background:url(../img/fondoPantalla.webp) ;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0ff;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado button {
+    background-color: #d9534f;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #f00;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.encabezado button:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+
+.encabezado button i {
+    margin-right: 5px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.perfil img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.perfil .informacion {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil .informacion .nombre {
+    display: flex;
+    align-items: center;
+}
+
+.perfil .informacion .nombre img {
+    margin-left: 10px;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.perfil .informacion .insignia {
+    background-color: #f0ad4e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px #ff0;
+}
+
+.estadisticas {
+    margin-top: 20px;
+}
+
+.estadisticas .seccion {
+    margin-bottom: 20px;
+}
+
+.estadisticas .seccion h3 {
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.estadisticas .seccion .contenido {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.historial {
+    margin-top: 20px;
+}
+
+.historial h3 {
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.historial table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.historial th, .historial td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0ff;
+}
+
+.historial th {
+    background-color: #222;
+    color: #f0ad4e;
+}
+
+.historial tr:nth-child(even) {
+    background-color: #333;
+}
+
+.historial tr:hover {
+    background-color: #444;
+}
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pie button {
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #0f0;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pie button:hover {
+    background-color: #4cae4c;
+    transform: scale(1.05);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 10px;
+    }
+
+    .encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .perfil {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .perfil img {
+        margin-bottom: 10px;
+    }
+
+    .estadisticas .seccion {
+        margin-bottom: 15px;
+    }
+
+    .historial table {
+        font-size: 14px;
+    }
+
+    .pie {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pie button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .historial {
+        margin: 0 10px; /* Espaciado lateral para mejor visualización */
+    }
+
+    .historial table {
+        width: 100%; /* Asegura que la tabla ocupe todo el ancho */
+        display: block; /* Permite desplazamiento si es necesario */
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+        border: none; /* Quitar el borde si es necesario */
+    }
+
+    .historial th, .historial td {
+        padding: 5px; /* Espaciado reducido para celdas */
+        font-size: 12px; /* Tamaño de fuente más pequeño */
+    }
+
+    .historial tr {
+        display: table-row; /* Mantiene el diseño de fila */
+    }
+
+    .historial th {
+        background-color: #222; /* Fondo oscuro para encabezados */
+        color: #f0ad4e; /* Color del texto de los encabezados */
+    }
+
+    .historial tr:nth-child(even) {
+        background-color: #333; /* Fondo alternativo para filas pares */
+    }
+}
+.perfil-contenido {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido */
+    gap: 20px; /* Espacio entre la imagen y el nombre */
+}
+
+#avatar-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#avatar-preview:hover {
+    transform: scale(1.1);
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre input {
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: white;
+    border-bottom: 2px solid #0ff;
+    padding: 5px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    background: #1e1e1e;
+    border: 2px solid #0ff;
+    color: #0ff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #0ff;
+    color: #1e1e1e;
+}
+
+
+

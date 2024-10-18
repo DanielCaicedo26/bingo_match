@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background: linear-gradient(to right, rgb(48, 41, 41) 50%, rgb(122, 15, 113) 50%);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.portada {
+    display: flex;
+    justify-content: space-between
+    ; /* Distribuye el espacio igual entre las opciones */
+    width: 100%;
+    max-width: 900px; /* Ancho máximo del contenedor */
+    align-items: center; /* Alinea verticalmente los botones */
+}
+
+.opcion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre el botón y el texto */
+    width: 45%; /* Tamaño del contenedor de cada opción */
+    text-align: center;
+}
+
+.opcion {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(135deg, #ff0000, #ff8c00); /* Gradiente */
+    color: #fff;
+    font-size: 20px;
+    padding: 38px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgb(248, 10, 10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.5s ease;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #ff007f, #00c6ff, #ff8c00, #0072ff) 1;
+    width: 100%; /* Asegura que los botones ocupen el 100% del contenedor */
+}
+
+.opcion:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px 20px rgba(185, 180, 183, 0.5);
+    border-image: linear-gradient(135deg, #ff00ff, #ff007f, #ff8c00) 1;
+}
+
+.opcion-solo {
+    background: linear-gradient(135deg, #c41515, #ff008c);
+}
+
+.opcion-multijugador {
+    background: linear-gradient(135deg, #1c505a, #1453a0);
+}
+
+.info, .infoazul {
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    max-width: 300px;
+}
+

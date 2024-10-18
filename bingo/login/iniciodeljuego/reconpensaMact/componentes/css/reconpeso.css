@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url(../img/imagenelista222.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+.header {
+    background: rgba(4, 238, 255, 0.212);
+    background: linear-gradient(90deg, rgba(4, 238, 255, 0.349) 10%, rgba(111, 31, 80, 0.315) 53%, rgba(5, 1, 1, 0) 100%);
+    padding: 25px;
+    width: 1100px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: -70px;
+    
+}
+
+.caja-img{
+    width: 230px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 230px;
+    position: absolute;
+    top: 10px; /* Ajusta la posición vertical */
+    right: 25px; /* Centra horizontalmente */
+    transform: translateX(-50%);
+}
+.header h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    font-size: 65px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para hacerla más llamativa */
+    margin-right: 700px;
+    letter-spacing: 5px;
+}
+
+.header h2 {
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-right: 700px;
+    letter-spacing: 5px;
+}
+
+.reward-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    scroll-behavior: smooth;
+    cursor: grab;
+    position: relative;
+}
+.cofre-tesoro{
+    width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 170px;
+    margin-left: -35px;
+}
+.lectra-semana{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: -10px;
+    color: aliceblue;
+}
+    
+.buy-button {
+    background-color: #ee108a00;
+    color: rgb(255, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    
+ }
+
+
+.reward-container.active {
+    cursor: grabbing;
+}
+
+.reward-card {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.reward-card p {
+    color: white;
+    margin: 5px 0;
+}
+.reward-card:hover {
+    transform: scale(1.1);
+}
+.back-button {
+    background: linear-gradient(to bottom, #ff00b3, #000000);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}

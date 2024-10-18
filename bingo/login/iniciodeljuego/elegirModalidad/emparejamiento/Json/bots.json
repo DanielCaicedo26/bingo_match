@@ -1,0 +1,12 @@
+[
+    { "nombre": "Juan Pérez", "nivel": "Novato" },
+    { "nombre": "María González", "nivel": "Intermedio" },
+    { "nombre": "Carlos Sánchez", "nivel": "Avanzado" },
+    { "nombre": "Ana Torres", "nivel": "Novato" },
+    { "nombre": "Luis Fernández", "nivel": "Intermedio" },
+    { "nombre": "Laura Martínez", "nivel": "Avanzado" },
+    { "nombre": "José Ramírez", "nivel": "Novato" },
+    { "nombre": "Sofía Castro", "nivel": "Intermedio" },
+    { "nombre": "Diego Morales", "nivel": "Avanzado" },
+    { "nombre": "Carmen Díaz", "nivel": "Intermedio" }
+]

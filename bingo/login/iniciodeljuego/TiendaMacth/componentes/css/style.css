@@ -1,0 +1,354 @@
+body {
+  
+    background:url(../img/pixelcut-export.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Animación de colores en bordes del container */
+@keyframes border-color-change {
+   0% {
+       border-color: #ff008c;
+   }
+   25% {
+       border-color: #871aec;
+   }
+   50% {
+       border-color: #109dee;
+   }
+   75% {
+       border-color: #fffb03;
+   }
+   100% {
+       border-color: #ff008c;
+   }
+}
+
+.container {
+   background: rgba(235, 233, 226, 0.212);
+   border-radius: 50px;
+   padding: 20px;
+   width: 50%;
+   margin: 50px auto;
+   position: relative;
+   margin-top:55px;
+   border: 6px solid #ff008c; /* Color inicial del borde */
+   animation: border-color-change 3s infinite; /* Animación de cambio de color continua */
+   overflow: hidden; /* Oculta el contenido adicional */
+}
+
+
+.title {
+   font-size: 50px;
+   margin-top: 10PX;
+   font-family: 'Luckiest Guy', cursive;
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para hacerla más llamativa */
+   margin-left: 600px;
+   letter-spacing: 4px;
+}
+
+.card {
+   display: inline-block;
+   width: 300px;
+   margin: 0 10px; /* Espacio reducido entre los cartones */
+   text-align: center;
+   
+}
+
+.cost {
+   font-size: 20px;
+   margin: 10px 0;
+   color: #000000;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   margin-left: 90px;
+}
+
+.buy-button {
+   background-color: #ee108a;
+   color: rgb(0, 0, 0);
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   padding: 5px 10px;
+   border: none;
+   margin-left: 90px;
+   border-radius: 10px;
+   cursor: pointer;
+   font-size: 20px;
+}
+
+.exit-button {
+   background-color: #ff00ff;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 20px;
+   margin-top: -50px;
+}
+/*
+.coins {
+   position: absolute;
+   top: 30px;
+   color: #000000;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   right: 90px;
+   background-color: #f1eaf1b0;
+   padding: 30px;
+   border-radius: 10px;
+   font-size: 20px;
+}
+   */
+
+.corner-decor {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-color: #ff008c;
+   border-radius: 50%;
+}
+
+.corner-decor.top-left {
+   top: 10px;
+   left: 10px;
+}
+
+.corner-decor.top-right {
+   top: 10px;
+   right: 10px;
+}
+
+.corner-decor.bottom-left {
+   bottom: 10px;
+   left: 10px;
+}
+
+.corner-decor.bottom-right {
+   bottom: 10px;
+   right: 10px;
+}
+
+.bingo-card {
+   background: url(../img/fondodinosaruio.jpg);
+   padding: 10px;
+   border-radius: 0px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 5px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+}
+
+.bingo-medieval {
+   background: url(../img/DALL·E\ 2024-10-07\ 17.02.03\ -\ A\ detailed\ medieval-themed\ scene\ featuring\ a\ grand\ stone\ castle\ with\ towering\ walls\ and\ multiple\ turrets.\ The\ castle\ sits\ on\ a\ hill\ surrounded\ by\ lush.webp);
+   padding: 10px;
+   border-radius: 0px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 5px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+}
+
+.bingo-natu {
+   background-color: #fb98c1;
+   background: url(../img/naturaleza.jpg);
+   padding: 10px;
+   border-radius: 0px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 5px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+   left: 100px;
+}
+
+.bingo-comit {
+   background-color: #9c9799;
+   background: url(../img/imagenhistori.jpg);
+   padding: 10px;
+   border-radius: 0px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 5px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+}
+
+.bingo-zombie {
+   background-color: #073306;
+   background: url(../img/DALL·E\ 2024-10-07\ 17.51.47\ -\ An\ animated\ zombie-themed\ background\ scene\ featuring\ a\ dark\,\ eerie\ landscape.\ In\ the\ foreground\,\ a\ desolate\ urban\ area\ with\ crumbling\ buildings\,\ broke.webp);
+   padding: 10px;
+   border-radius: 0px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 5px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+}
+
+.bingo-futbol {
+   background-color: #073306;
+   background: url(../img/imagenestadio.jpg);
+   padding: 10px;
+   border-radius: 0px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 5px;
+   text-align: center;
+   font-family: Arial, sans-serif;
+}
+
+.bingo-header {
+   grid-column: span 5;
+   background-color: #32cd32;
+   color: rgb(255, 255, 255);
+   font-size: 23px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 5px 0;
+   border-radius: 15px;
+}
+
+.bingo-comite {
+   grid-column: span 5;
+   background-color: #8f8f8f;
+   color: rgb(255, 255, 255);
+   font-size: 23px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 5px 0;
+   border-radius: 15px;
+}
+
+.bingo-medi {
+   grid-column: span 5;
+   background-color: #46e7ec;
+   color: rgb(255, 255, 255);
+   font-size: 23px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 5px 0;
+   border-radius: 15px;
+}
+
+.bingo-zombi {
+   grid-column: span 5;
+   background-color: #0b2e04;
+   color: rgb(255, 255, 255);
+   font-size: 23px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 5px 0;
+   border-radius: 15px;
+}
+
+.bingo-fut {
+   grid-column: span 5;
+   background-color: #ec0f0f;
+   color: rgb(255, 255, 255);
+   font-size: 23px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 5px 0;
+   border-radius: 15px;
+}
+
+.bingo-natural {
+   grid-column: span 5;
+   background-color: #f158a5;
+   color: rgb(255, 255, 255);
+   font-size: 23px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 5px 0;
+   border-radius: 15px;
+}
+
+.bingo-cell { 
+   background-color: rgb(255, 255, 255);
+   font-size: 20px;
+   padding: 10px;
+   border-radius: 18px;
+}
+
+.dino-img {
+   width: 400px; /* Ajusta el tamaño de la imagen según sea necesario */
+   
+   position: absolute;
+   top: -20px; /* Ajusta la posición vertical */
+   right: -44%; /* Centra horizontalmente */
+   transform: translateX(-50%);
+}
+
+.villano-img {
+   width: 150px; /* Ajusta el tamaño de la imagen según sea necesario */
+   height: 150;
+   position: absolute;
+   top: 150px; /* Ajusta la posición vertical */
+   right: 45%; /* Centra horizontalmente */
+   transform: translateX(-50%);
+}
+.medieval-img {
+   width: 350px; /* Ajusta el tamaño de la imagen según sea necesario */
+   height: 350;
+   position: absolute;
+   top: 85px; /* Ajusta la posición vertical */
+   left: 100px; /* Centra horizontalmente */
+   transform: translateX(-50%);
+}
+.zombie-img {
+   width: 350px; /* Ajusta el tamaño de la imagen según sea necesario */
+   height: 350;
+   position: absolute;
+   top: 93px; /* Ajusta la posición vertical */
+   left: 280px; /* Centra horizontalmente */
+   transform: translateX(-50%);
+}
+.futbol-img {
+   width: 350px; /* Ajusta el tamaño de la imagen según sea necesario */
+   height: 350;
+   position: absolute;
+   top: 93px; /* Ajusta la posición vertical */
+   left: 300px; /* Centra horizontalmente */
+   transform: translateX(-50%);
+}
+
+
+
+
+.mariposa-img {
+   width: 150px; /* Ajusta el tamaño de la imagen según sea necesario */
+   height: 150;
+   position: absolute;
+   top: 10px; /* Ajusta la posición vertical */
+   left: 5%; /* Centra horizontalmente */
+   transform: translateX(-50%);
+}
+
+/* Estilos para el carrusel */
+.carousel-inner {
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro del carrusel */
+    align-items: center; /* Centra verticalmente los elementos */
+
+   
+}
+
+.carousel-item {
+    display: flex; /* Cambia el comportamiento de la tarjeta para usar flexbox */
+    justify-content: center; /* Asegura que el contenido se centre */
+    align-items: center;
+    transition: transform 0.5s ease; /* Agrega una transición suave al transform */
+    color: #000000;
+}
+
+.carousel-item.active {
+    transform: scale(1.01); /* Aumenta un poco el tamaño de la tarjeta activa */
+}
+
+.card {
+    margin: 0 5px; /* Reduce el margen entre las tarjetas */
+    flex: 0 0 auto; /* Evita que las tarjetas se expandan */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1); /* Asegura que los controles sean visibles sobre el fondo */
+}
