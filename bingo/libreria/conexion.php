@@ -12,7 +12,7 @@ class Conexion {
         $this->usuario = "postgres"; // Cambia según tu configuración
         $this->password = "3204155185"; // Cambia según tu configuración
         $this->puerto = "5432";
-        $this->baseDatos = "usuario"; // Nombre de tu base de datos
+        $this->baseDatos = "usuarios"; // Nombre de tu base de datos
     }
 
     public function conectar() {
