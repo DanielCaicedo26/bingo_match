@@ -1,64 +1,6 @@
 <?php
-session_start();
-$conexion = new mysqli('localhost', 'root', '', 'usuariosDa');
+ include('libreria/sesiones.php'); ?>
 
-if ($conexion->connect_error) {
-    die("Error en la conexión: " . $conexion->connect_error);
-}
-
-if (isset($_POST['registrarse'])) {
-    $nombre_usuario = $_POST['nombre_usuario'];
-    $correo = $_POST['correo_registro'];
-    $contrasena = password_hash($_POST['contrasena_registro'], PASSWORD_DEFAULT);
-
-    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE correo = ?");
-    $stmt->bind_param('s', $correo);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        echo "<script>alert('Este correo ya está registrado.')</script>";
-    } else {
-        $stmt = $conexion->prepare("INSERT INTO usuarios (nombre_usuario, correo, contrasena) VALUES (?, ?, ?)");
-        $stmt->bind_param('sss', $nombre_usuario, $correo, $contrasena);
-        if ($stmt->execute()) {
-            echo "<script>alert('Registro exitoso. Ahora puedes iniciar sesión.')</script>";
-        } else {
-            echo "<script>alert('Error al registrar usuario.')</script>";
-        }
-    }
-}
-
-if (isset($_POST['iniciar_sesion'])) {
-    $correo = $_POST['correo_login'];
-    $contrasena = $_POST['contrasena_login'];
-
-    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE correo = ?");
-    $stmt->bind_param('s', $correo);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        $usuario = $resultado->fetch_assoc();
-        if (password_verify($contrasena, $usuario['contrasena'])) {
-            // Guardar la información en la sesión
-            $_SESSION['id_usuario'] = $usuario['id'];
-            $_SESSION['nombre_usuario'] = $usuario['nombre_usuario'];
-            $_SESSION['foto_perfil'] = $usuario['foto_perfil'];
-
-            // Redirigir a la página principal del juego
-            header("Location: iniciodeljuego/inicio.php");
-            exit;
-        } else {
-            echo "<script>alert('Contraseña incorrecta.')</script>";
-        }
-    } else {
-        echo "<script>alert('No se encontró una cuenta con ese correo.')</script>";
-    }
-}
-
-$conexion->close();
-?>
 
 <!DOCTYPE html>
 <html lang="es">
