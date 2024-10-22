@@ -18,7 +18,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Conectar a la base de datos
-$conexion = new mysqli('localhost', 'root', '', 'usuariosDa');
+
 
 if ($conexion->connect_error) {
     die("Error en la conexión: " . $conexion->connect_error);
