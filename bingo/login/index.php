@@ -1,5 +1,7 @@
 <?php
- include('libreria/sesiones.php'); ?>
+ include('libreria/sesiones.php');
+  
+ ?>
 
 
 <!DOCTYPE html>
