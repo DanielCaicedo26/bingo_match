@@ -1,9 +1,7 @@
 <?php
- include('libreria/sesiones.php');
+ include('../libreria/sesiones.php');
   
  ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,16 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <div class="form-container">
             <!-- Formulario de Inicio de Sesión -->
             <div id="login-form" class="form-switching">
-                <!-- Avatar -->
                 <div class="avatar-container">
                     <img src="img/aataer-removebg-preview.png" alt="Avatar" class="avatar">
                 </div>
                 <h2>Inicio de Sesión</h2>
-                <form method="post" action="index.html">
+                <form method="post" action="index.php">
                     <div class="form-group">
                         <label for="login-email">Correo electrónico</label>
                         <div class="input-group">
@@ -52,12 +49,11 @@
 
             <!-- Formulario de Registro -->
             <div id="register-form" class="form-switching hidden">
-                <!-- Avatar -->
                 <div class="avatar-container">
                     <img src="img/aataer-removebg-preview.png" alt="Avatar" class="avatar">
                 </div>
                 <h2>Registro</h2>
-                <form method="post" action="index.html">
+                <form method="post" action="index.php">
                     <div class="form-group">
                         <label for="register-username">Nombre de usuario</label>
                         <div class="input-group">
@@ -96,8 +92,9 @@
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.27/build/spline-viewer.js"></script>
     <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/o9HE31cT8HAhjAeT/scene.splinecode"></spline-viewer>
-    <script src="js/script.js"></script>
-
+    <script src="js/script.js"></script> <!-- Aquí estará el script para la funcionalidad -->
+</body>
+</html>
     
 </body>
 </html>

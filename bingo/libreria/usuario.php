@@ -1,6 +1,6 @@
 <?php 
 
-include('libreria/conexion.php');
+include('conexion.php');
 
 class Usuario {
     private $conexion;

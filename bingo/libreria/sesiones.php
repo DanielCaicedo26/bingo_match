@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include('libreria/usuario.php');
+include('usuario.php');
 
 $usuario = new Usuario();
 
@@ -32,7 +32,7 @@ if (isset($_POST['iniciar_sesion'])) {
         $_SESSION['id_usuario'] = $usuarioInfo['id'];
         $_SESSION['nombre_usuario'] = $usuarioInfo['nombre_usuario'];
         $_SESSION['foto_perfil'] = $usuarioInfo['foto_perfil'];
-        header("Location: iniciodeljuego/inicio.php");
+        header("Location: :http://localhost/2901817PHP/2901817/bingo.git/bingo/login/iniciodeljuego/inicio.php");
         exit;
     } else {
         echo "<script>alert('No se encontró una cuenta con ese correo o la contraseña es incorrecta.')</script>";
