@@ -1,28 +1,13 @@
 <?php
-if (isset($_POST['inicio'])) {
-    header("Location:http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/elegirModalidad/elegirModalidad.php");  
-    exit;
-}
-
-if (isset($_POST['tienda'])) {
-    header("Location:http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/TiendaMacth/");  
-    exit;
-}
-if (isset($_POST['recompensa'])) {
-    header("Location:http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/reconpensaMact/");  
-    exit;
-}
 session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include('conexion.php');
+
 // Conectar a la base de datos
-
-
-if ($conexion->connect_error) {
-    die("Error en la conexión: " . $conexion->connect_error);
-}
+$conexion = new Conexion();
 
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['id_usuario'])) {
@@ -34,13 +19,12 @@ if (!isset($_SESSION['id_usuario'])) {
 $id_usuario = $_SESSION['id_usuario'];
 
 // Obtener información del usuario
-$stmt = $conexion->prepare("SELECT nombre_usuario, foto_perfil, nivel, monedas FROM usuarios WHERE id = ?");
-$stmt->bind_param('i', $id_usuario);
+$stmt = $conexion->conectar()->prepare("SELECT nombre_usuario, foto_perfil, nivel, monedas FROM usuarios WHERE id = :id");
+$stmt->bindParam(':id', $id_usuario, PDO::PARAM_INT);
 $stmt->execute();
-$result = $stmt->get_result();
 
-if ($result->num_rows > 0) {
-    $usuario = $result->fetch_assoc();
+if ($stmt->rowCount() > 0) {
+    $usuario = $stmt->fetch();
     $nombre_usuario = $usuario['nombre_usuario'];
     $foto_perfil = $usuario['foto_perfil'];
     $nivel_usuario = $usuario['nivel'];
@@ -49,7 +33,24 @@ if ($result->num_rows > 0) {
     echo "No se encontró el usuario.";
     exit;
 }
+
+// Manejo de botones
+if (isset($_POST['inicio'])) {
+    header("Location: http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/elegirModalidad/elegirModalidad.php");  
+    exit;
+}
+
+if (isset($_POST['tienda'])) {
+    header("Location: http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/TiendaMacth/");  
+    exit;
+}
+
+if (isset($_POST['recompensa'])) {
+    header("Location: http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/reconpensaMact/");  
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,40 +81,40 @@ if ($result->num_rows > 0) {
                 </button>
             </div>
         </form>
-    <div class="logo-button">
-        <img src="img/bingo.png" alt="Imagen 4">
-    </div>
-  
-    <div class="luz-busqueda"></div>
-
-    <div class="usuario-boton" style="cursor: pointer;" onclick="window.location.href='http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/perfil/';">
-        <img src="<?php echo htmlspecialchars($foto_perfil); ?>" alt="Avatar del usuario" class="avatar">
-        <div class="info-usuario">
-            <span class="nombre-usuario"><?php echo htmlspecialchars($nombre_usuario); ?></span>
-            <div class="barra-nivel">
-                <div class="nivel" style="width: <?php echo htmlspecialchars($nivel_usuario * 10); ?>%;"></div>
-            </div>
-            <span class="texto-nivel">Nivel <?php echo htmlspecialchars($nivel_usuario); ?></span>
+        
+        <div class="logo-button">
+            <img src="img/bingo.png" alt="Imagen 4">
         </div>
-    </div>
+  
+        <div class="luz-busqueda"></div>
 
-    <!-- Botón de cantidad de monedas -->
-    <div class="cantidad-monedas">
-        <button>
-            <img src="img/monedas-icono.jpeg" alt="Monedas" >
+        <div class="usuario-boton" style="cursor: pointer;" onclick="window.location.href='http://localhost/2901817PHP/2901817/bingo/login/iniciodeljuego/perfil/';">
+            <img src="<?php echo htmlspecialchars($foto_perfil); ?>" alt="Avatar del usuario" class="avatar">
+            <div class="info-usuario">
+                <span class="nombre-usuario"><?php echo htmlspecialchars($nombre_usuario); ?></span>
+                <div class="barra-nivel">
+                    <div class="nivel" style="width: <?php echo htmlspecialchars($nivel_usuario * 10); ?>%;"></div>
+                </div>
+                <span class="texto-nivel">Nivel <?php echo htmlspecialchars($nivel_usuario); ?></span>
+            </div>
+        </div>
+
+        <!-- Botón de cantidad de monedas -->
+        <div class="cantidad-monedas">
+            <button>
+                <img src="img/monedas-icono.jpeg" alt="Monedas">
                 <?php echo htmlspecialchars($monedas_usuario); ?>
-            </span>
-        </button>
-    </div>
-
-    <!-- Botón de recompensas diarias -->
-    <form method="post">
-        <div class="recompensaDiaria">
-            <button type="submit" name="recompensa" style="border: none; background: none; padding: 0;">
-                <img src="img/Moneda.jpeg" alt="Imagen 5" style="cursor: pointer;">
             </button>
         </div>
-    </form>
-   
+
+        <!-- Botón de recompensas diarias -->
+        <form method="post">
+            <div class="recompensaDiaria">
+                <button type="submit" name="recompensa" style="border: none; background: none; padding: 0;">
+                    <img src="img/Moneda.jpeg" alt="Imagen 5" style="cursor: pointer;">
+                </button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
