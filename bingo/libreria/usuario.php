@@ -25,12 +25,17 @@ class Usuario {
     }
 
     public function registrar() {
-        $sql = "INSERT INTO usuarios (nombre_usuario, correo, contrasena) VALUES (:nombre_usuario, :correo, :contrasena)";
+        // Establece un valor predeterminado para el nivel
+        $nivel = 1; // Cambia esto al valor que desees establecer por defecto
+
+        $sql = "INSERT INTO usuarios (nombre_usuario, correo, contrasena, nivel) VALUES (:nombre_usuario, :correo, :contrasena, :nivel)";
         $valores = [
             ':nombre_usuario' => $this->nombre_usuario,
             ':correo' => $this->correo,
-            ':contrasena' => $this->contrasena
+            ':contrasena' => $this->contrasena,
+            ':nivel' => $nivel // Asegúrate de asignar el valor a ':nivel'
         ];
+        
         $this->conexion->ejecutar($sql, $valores);
     }
 
