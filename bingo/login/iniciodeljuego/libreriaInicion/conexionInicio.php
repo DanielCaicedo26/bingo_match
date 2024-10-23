@@ -10,9 +10,9 @@ class Conexion {
     public function __construct() {
         $this->servidor = "localhost";
         $this->usuario = "postgres";
-        $this->password = "3204155185"; // Cambia esta contraseña según tu configuración
+        $this->password = "daniel"; // Cambia esta contraseña según tu configuración
         $this->puerto = "5432";
-        $this->baseDatos = "usuario"; // Cambia a "usuariosDa"
+        $this->baseDatos = "usuarios"; 
     }
 
     public function conectar() {
